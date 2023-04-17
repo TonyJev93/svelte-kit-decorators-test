@@ -1,11 +1,14 @@
 <script>
-    import {SomeRequest} from "../lib/some-request.js";
+    import {Person} from "../lib/some-request.js";
 
-    export const request = new SomeRequest("전계원", "allstarz12@naver.com")
+    export const person = new Person('계원', '전')
+    console.log(person.getFullName())
+
+    console.log(Person.prototype.getFullName = () => "CRACKED")
 </script>
 
 <h1>Decorator Test</h1>
 <p>
-    {request.name}<br/>
-    {request.email}
+    {person.firstName}<br/>
+    {person.lastName}
 </p>

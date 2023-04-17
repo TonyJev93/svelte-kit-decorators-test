@@ -1,16 +1,20 @@
-function someDecorator(target) {
-    // target.prototype.hello = function() {
-    //     console.log('Hello, World!')
-    // }
-}
+const readOnly = (target) => { // with new Person, target will be an instance of Person
+    target.descriptor.writable = false
+};
 
-@someDecorator
-export class SomeRequest {
+
+export class Person {
     constructor(
-        name,
-        email
+        firstName,
+        lastName
     ) {
-        this.name = name
-        this.email = email
+        this.firstName = firstName
+        this.lastName = lastName
+    }
+
+    @readOnly
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`
     }
 }
+
