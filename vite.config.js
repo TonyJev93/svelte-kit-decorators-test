@@ -14,7 +14,9 @@ export default defineConfig({
 					plugins: [
 						[
 							'@babel/plugin-proposal-decorators', //  to enable transformation
-							{decoratorsBeforeExport: true} // resolve for : The decorators plugin, when .version is '2018-09' or not specified," + " requires a 'decoratorsBeforeExport' option, whose value must be a boolean.
+							{
+								legacy: true // 데코레이터 문법을 지원하지 않는 브라우저/환경에서도 문법을 지원하기 위해 사용되는 옵션
+							}
 						],
 						'@babel/plugin-proposal-class-properties', // Class 내 프로퍼티 사용을 위해 필요
 					]

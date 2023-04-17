@@ -1,5 +1,6 @@
-const readOnly = (target) => { // with new Person, target will be an instance of Person
-    target.descriptor.writable = false
+const readOnly = (target, property, descriptor) => { // with new Person, target will be an instance of Person
+    descriptor.writable = false;
+    return descriptor; // this function MUST return descriptor
 };
 
 
