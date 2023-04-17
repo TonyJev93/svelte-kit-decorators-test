@@ -1,7 +1,7 @@
 function someDecorator(target) {
-    target.prototype.hello = function() {
-        console.log('Hello, World!')
-    }
+    // target.prototype.hello = function() {
+    //     console.log('Hello, World!')
+    // }
 }
 
 @someDecorator
